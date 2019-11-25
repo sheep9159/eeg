@@ -67,7 +67,7 @@ for trial in len(eeg_signal_data[0]):
         '''
         eeg_four_frequency_band = get_eeg_signal_four_frequency_band(eeg_signal_data[trial][channel])
 
-        for i in len(eeg_four_frequency_band):
-            f, Pper_spec = signal.periodogram(eeg_four_frequency_band[i], fs, 'hamming', scaling='spectrum')
-            Pper_spec = np.square(Pper_spec).sum()        # 数字信号，能量就是各点信号幅度值平方后的求和，至此求得一个电极下特定频率的能量
-            PSD.append(Pper_spec)
+        # for i in len(eeg_four_frequency_band):
+        #     f, Pper_spec = signal.periodogram(eeg_four_frequency_band[i], fs, 'hamming', scaling='spectrum')
+        #     Pper_spec = np.square(Pper_spec).sum()        # 数字信号，能量就是各点信号幅度值平方后的求和，至此求得一个电极下特定频率的能量
+        #     PSD.append(Pper_spec)
