@@ -10,7 +10,7 @@ N = 8064                     # 数据点长度为8064
 
 eeg_signal_data = []              # 用于存储所有受试者所有的生理信号shape is [3, 40 ,40 ,8064]
 eeg_signal_label = []             # 用于存储所有受试者的情绪标签shape is [3, 32, 4]
-PSD = []                          # 用于存储所有的脑电极下所有频段的功率shape is [3, 40, 32]
+PSD = []                          # 用于存储所有的脑电极下所有频段的功率shape is [3, 40, 32, 4]
 
 eeg_signal_data_shape = [3, 40, 40 ,8064]
 eeg_signal_label_shape = [3, 40, 4]
