@@ -80,9 +80,12 @@ for index in range(SUBJECTS):
 
             for i in range(BANDS):
                 f, Pper_spec = signal.periodogram(eeg_four_frequency_band[i], fs, 'hamming', scaling='spectrum')
-                Pper_spec = (Pper_spec - np.mean(Pper_spec)) / np.std(Pper_spec)
                 Pper_spec = Pper_spec.sum()              # 数字信号，至此求得一个电极下特定频率的能量
                 PSD.append(Pper_spec)
+
+            total_energy = sum(PSD[index][trial][channel])
+            for i in range(BANDS):
+                PSD[index][trial][channel][i] = PSD[index][trial][channel][i] / total_energy  # 求得每个电极下特定频率所占的能量比
 
     print('{} down'.format(file_names[index]))
 
